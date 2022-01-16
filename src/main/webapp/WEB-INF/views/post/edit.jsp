@@ -12,7 +12,7 @@
                 <c:if test="${not empty post}">Редактировать тему</c:if>
             </div>
             <div class="card-body">
-                <form action="<c:url value='/post/save'/>" method='POST'>
+                <form action="<c:url value='/post/save?id=${post != null ? post.id : 0}'/>" method='POST'>
                     <div class="form-group">
                         <label>Название:</label>
                         <input

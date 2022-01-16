@@ -12,3 +12,19 @@ values ('О чем этот форум?', 'По своей сути рыбате
 insert into posts (name, description)
 values ('Правила форума', 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который ' ||
                              'вызывает у некторых людей недоумение при попытках прочитать рыбу текст.');
+
+create table authorities (
+    id serial primary key,
+    authority varchar(50) not null unique
+);
+
+create table users (
+    id serial primary key,
+    username varchar(50) not null unique,
+    password varchar(100) not null,
+    enabled boolean default true,
+    authority_id int not null references authorities(id)
+);
+
+insert into authorities (authority) values ('ROLE_USER');
+insert into authorities (authority) values ('ROLE_ADMIN');

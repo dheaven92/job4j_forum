@@ -9,22 +9,14 @@ import javax.persistence.*;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
-@Table(name = "users")
+@Table(name = "authorities")
 @Entity
-public class User {
+public class Authority {
 
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String username;
-
-    private String password;
-
-    private boolean enabled;
-
-    @ManyToOne
-    @JoinColumn(name = "authority_id")
-    private Authority authority;
+    private String authority;
 }

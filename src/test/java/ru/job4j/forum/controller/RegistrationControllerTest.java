@@ -46,8 +46,8 @@ public class RegistrationControllerTest {
     @Test
     public void shouldReturnLoginPageWhenUserRegistered() throws Exception {
         this.mockMvc.perform(post("/register")
-                .param("username","Алекс")
-                .param("password","123"))
+                .param("username", "Алекс")
+                .param("password", "123"))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/login"));

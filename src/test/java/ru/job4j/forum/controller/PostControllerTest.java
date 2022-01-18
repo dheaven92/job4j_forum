@@ -69,7 +69,7 @@ public class PostControllerTest {
     @WithMockUser
     public void shouldReturnIndexPageWhenPostSaved() throws Exception {
         this.mockMvc.perform(post("/post/save?id=0")
-                .param("name","Куплю ладу-грант."))
+                .param("name", "Куплю ладу-грант."))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/"));
@@ -82,8 +82,8 @@ public class PostControllerTest {
     @WithMockUser
     public void shouldReturnIndexPageWhenPostUpdated() throws Exception {
         this.mockMvc.perform(post("/post/save?id=1")
-                .param("id","1")
-                .param("name","Куплю ладу-грант."))
+                .param("id", "1")
+                .param("name", "Куплю ладу-грант."))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/"));

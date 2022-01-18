@@ -10,6 +10,13 @@
             Регистрация
          </div>
          <div class="card-body">
+            <c:if test="${not empty errorMessage}">
+               <div class="row pt-3">
+                  <div class="alert alert-danger">
+                        ${errorMessage}
+                  </div>
+               </div>
+            </c:if>
             <form action="<c:url value='/register'/>" method='POST'>
                <div class="form-group">
                   <label>Логин:</label>
